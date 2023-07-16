@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/animch/frontend-project-12#readme",
   "dependencies": {
-    "@hexlet/chat-server": "^1.1.6"
+    "@hexlet/chat-server": "^1.1.6",
+    "bootstrap": "^5.3.0",
+    "i18next": "^23.2.11",
+    "react-bootstrap": "^2.8.0",
+    "react-i18next": "^13.0.2"
   }
 }

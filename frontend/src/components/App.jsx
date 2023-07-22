@@ -1,7 +1,6 @@
-
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import getRoutes from '../routes.js';
 
 import Header from './Header.jsx';
 import NotFound from './NotFoundPage.jsx';
@@ -13,7 +12,7 @@ const App = () => (
       <Router>
         <Header />
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
+          <Route path={getRoutes.loginPagePath()} element={<LoginPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

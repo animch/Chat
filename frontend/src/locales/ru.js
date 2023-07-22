@@ -7,5 +7,8 @@ export default {
         notAccount: 'Нет аккаунта?',
         signUp: 'Регистрация',
         enter: 'Войти',
+        required: 'Обязательное поле',
+        username: 'Ваш ник',
+        password: 'Пароль',
     },
 };

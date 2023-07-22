@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useRef, useState, createContext, useContext } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useLocation, useNavigate, NavLink } from 'react-router-dom';
@@ -7,13 +7,14 @@ import {
   Button, Form, Col, Container, Card, Row, FloatingLabel,
 } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import { useAuth } from '../hooks/hooks';
+import getRoutes from '../routes.js';
 
 import imagePath from '../assets/avatar.jpg';
 
 const LoginPage = () => {
     const { t } = useTranslation();
-    const AuthContext = createContext({});
-    const auth = useContext(AuthContext);
+    const auth = useAuth();
     const [authFailed, setAuthFailed] = useState(false);
     const inputRef = useRef();
     const location = useLocation();
@@ -116,7 +117,7 @@ const LoginPage = () => {
                 <div className="text-center">
                   <span>{t('notAccount')}</span>
                   {' '}
-                  <NavLink to={'/signup'}>{t('signUp')}</NavLink>
+                  {/* <NavLink to={getRoutes.signupPagePath()}>{t('signUp')}</NavLink> */}
                 </div>
               </Card.Footer>
             </Card>

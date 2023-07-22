@@ -1,12 +1,11 @@
-import { useContext, createContext } from 'react';
 import { Button, Navbar, Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-
+import { useAuth } from '../hooks/hooks';
+import getRoutes from '../routes.js';
 
 const AuthButton = () => {
-  const AuthContext = createContext({});
-  const auth = useContext(AuthContext);
+  const auth = useAuth();
   const { t } = useTranslation();
   return (
     auth.loggedIn
@@ -20,7 +19,7 @@ const Header = () => {
   return (
     <Navbar bg="white" expand="lg" className="shadow-sm">
       <Container>
-        <Navbar.Brand as={Link} to={'/login'}>{t('chatLogo')}</Navbar.Brand>
+        <Navbar.Brand as={Link} to={getRoutes.chatPagePath()}>{t('chatLogo')}</Navbar.Brand>
         <AuthButton />
       </Container>
     </Navbar>

@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/hooks';
 import getRoutes from '../routes.js';
 
-import imagePath from '../assets/avatar.jpg';
+import imagePath from '../assets/avatar.png';
 
 const LoginPage = () => {
     const { t } = useTranslation();
@@ -66,7 +66,7 @@ const LoginPage = () => {
                 <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
                   <img
                     src={imagePath}
-                    className="roundedCircle"
+                    className="rounded card-img"
                     alt="Log in page"
                   />
                 </div>
@@ -117,7 +117,7 @@ const LoginPage = () => {
                 <div className="text-center">
                   <span>{t('notAccount')}</span>
                   {' '}
-                  {/* <NavLink to={getRoutes.signupPagePath()}>{t('signUp')}</NavLink> */}
+                  <NavLink to={getRoutes.signupPagePath()}>{t('signUp')}</NavLink>
                 </div>
               </Card.Footer>
             </Card>

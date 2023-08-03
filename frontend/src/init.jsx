@@ -1,11 +1,18 @@
+import { Provider } from 'react-redux';
 import i18next from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
-import App from './components/App';
+import leoProfanity from 'leo-profanity';
+import { Provider as RollbarProvider, ErrorBoundary } from '@rollbar/react';
+
+import AuthProvider from './context/AuthProvider.jsx';
+import { chatApiContext } from './context/context.js';
+import App from './components/App.jsx';
 import resources from './locales/index.js';
+import store from './slices/index.js';
+import chatApi from './context/chatApi.js';
 
-const init = async () => {
+const Init = async () => {
   const i18n = i18next.createInstance();
-
   await i18n
     .use(initReactI18next)
     .init({
@@ -13,11 +20,33 @@ const init = async () => {
       fallbackLng: 'ru',
     });
 
+  const ruDict = leoProfanity.getDictionary('ru');
+  leoProfanity.add(ruDict);
+
+  const rollbarConfig = {
+    accessToken: process.env.REACT_APP_ROLLBAR_TOKEN,
+    payload: {
+      environment: 'production',
+    },
+    captureUncaught: true,
+    captureUnhandledRejections: true,
+  };
+
   return (
-    <I18nextProvider i18n={i18n}>
-      <App />
-    </I18nextProvider>
+    <RollbarProvider config={rollbarConfig}>
+      <ErrorBoundary>
+        <I18nextProvider i18n={i18n}>
+          <Provider store={store}>
+            <AuthProvider>
+              <chatApiContext.Provider value={chatApi}>
+                <App />
+              </chatApiContext.Provider>
+            </AuthProvider>
+          </Provider>
+        </I18nextProvider>
+      </ErrorBoundary>
+    </RollbarProvider>
   );
 };
 
-export default init;
+export default Init;

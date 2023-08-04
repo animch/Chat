@@ -9,6 +9,7 @@ const reducer = combineReducers({
   messagesInfo,
   modalInfo,
 });
+
 export const actions = {
   ...channelsInfoActions,
   ...messagesInfoActions,

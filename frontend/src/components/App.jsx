@@ -1,9 +1,8 @@
 import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer } from 'react-toastify';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import getRoutes from '../routes.js';
-import { ToastContainer } from 'react-toastify';
 
 import Header from './Header.jsx';
 import NotFound from './NotFoundPage.jsx';

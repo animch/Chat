@@ -56,7 +56,7 @@ const LoginPage = () => {
       }
     },
   });
- 
+
   return (
     <Container className="h-100" fluid>
       <Row className="justify-content-center align-content-center h-100">
@@ -126,6 +126,5 @@ const LoginPage = () => {
     </Container>
   );
 };
-  
-  export default LoginPage;
-  
+
+export default LoginPage;

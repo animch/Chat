@@ -1,0 +1,30 @@
+name: eslint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  eslint:
+    name: Run eslint scanning
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+      actions: read 
+    steps:
+      - name: Checkout code
+
+        uses: actions/checkout@v3
+
+      - name: Install eslint
+
+        run: |
+          npm install eslint
+
+      - name: Run eslint
+
+        run: | 
+          npx eslint .

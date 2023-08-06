@@ -78,8 +78,9 @@ const SignUp = () => {
           return;
         }
         throw err;
+      } finally {
+        setSubmited(false);
       }
-      setSubmited(false);
     },
   });
 

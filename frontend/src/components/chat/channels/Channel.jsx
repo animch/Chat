@@ -20,7 +20,8 @@ const Channel = ({ channel }) => {
   const openRemoveChannelWindow = () => {
     dispatch(openModal({ type: 'removing', id }));
   };
-  const openRenameChannelWindow = () => {
+  const openRenameChannelWindow = (e) => {
+    e.target.blur();
     dispatch(openModal({ type: 'renaming', id }));
   };
   if (!removable) {

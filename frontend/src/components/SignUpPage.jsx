@@ -67,7 +67,6 @@ const SignUp = () => {
       try {
         const { username, password } = values;
         const { data } = await axios.post(getRoutes.signupPath(), { username, password });
-        localStorage.setItem('userId', JSON.stringify(data));
         logIn(data);
         const { from } = location.state || { from: { pathname: getRoutes.chatPagePath() } };
         navigate(from);

@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/animch/frontend-project-12/workflows/hexlet-check/badge.svg)](https://github.com/animch/frontend-project-12/actions)[![eslint](https://github.com/animch/frontend-project-12/actions/workflows/eslint.yml/badge.svg)](https://github.com/animch/frontend-project-12/actions/workflows/eslint.yml)
+[![Actions Status](https://github.com/animch/frontend-project-12/workflows/hexlet-check/badge.svg)](https://github.com/animch/frontend-project-12/actions)
+[![eslint](https://github.com/animch/frontend-project-12/actions/workflows/eslint.yml/badge.svg)](https://github.com/animch/frontend-project-12/actions/workflows/eslint.yml)
 
 <h1>Heclet Chat</h1>
 

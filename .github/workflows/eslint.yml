@@ -22,9 +22,10 @@ jobs:
       - name: Install eslint
 
         run: |
-          npm install eslint
+          make install
 
       - name: Run eslint
 
         run: | 
-          npx eslint .
+          make lint-frontend
+          

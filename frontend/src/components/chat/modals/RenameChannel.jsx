@@ -23,11 +23,9 @@ const validationChannelsSchema = (channels, text) => yup.object().shape({
 
 const Rename = ({ closeHandler, changed }) => {
   const { t } = useTranslation();
-  const refContainer = useRef('');
+  const refContainer = useRef();
   useEffect(() => {
-    setTimeout(() => {
-      refContainer.current.select();
-    }, 1);
+    refContainer.current.select();
   }, []);
   const chatApi = useChatApi();
 

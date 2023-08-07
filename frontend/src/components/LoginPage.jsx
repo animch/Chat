@@ -43,7 +43,7 @@ const LoginPage = () => {
         const res = await axios.post(getRoutes.loginPath(), values);
         localStorage.setItem('userId', JSON.stringify(res.data));
         auth.logIn(res.data);
-        const { from } = location.state || { from: { pathname: '/' } };
+        const { from } = location.state || { from: { pathname: getRoutes.chatPagePath() } };
         navigate(from);
       } catch (err) {
         formik.setSubmitting(false);

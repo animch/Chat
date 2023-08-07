@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import notFoundImage from '../assets/notFound.png';
+import getRoutes from '../routes.js';
 
 const NotFound = () => {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ const NotFound = () => {
       <p className="text-muted">
         {t('youCanGo')}
         {' '}
-        <a href="/login">{t('toHomePage')}</a>
+        <a href={getRoutes.loginPagePath()}>{t('toHomePage')}</a>
       </p>
     </div>
   );

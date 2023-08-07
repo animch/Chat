@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/hooks.js';
 
-import ChatPage from './componentsChat/ChatPage.jsx';
+import ChatPage from './chat/ChatPage.jsx';
 import getRoutes from '../routes.js';
 
 const PrivateRoute = () => {

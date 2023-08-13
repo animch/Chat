@@ -10,7 +10,6 @@ const AuthProvider = ({ children }) => {
 
   const logIn = useCallback((userData) => {
     localStorage.setItem('userId', JSON.stringify(userData));
-    setLoggedIn(true);
     setUser({ username: userData.username });
   }, []);
 

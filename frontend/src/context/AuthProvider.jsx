@@ -2,7 +2,7 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { AuthContext } from './context.js';
 
 const AuthProvider = ({ children }) => {
-  const savedUserData = JSON.parse(localStorage.getItem('userId'));
+  const savedUserData = JSON.parse(localStorage.getItem('userId')) ?? null;
   const [loggedIn, setLoggedIn] = useState(Boolean(savedUserData));
   const [user, setUser] = useState(
     savedUserData ? { username: savedUserData.username } : null,
@@ -10,7 +10,6 @@ const AuthProvider = ({ children }) => {
 
   const logIn = useCallback((userData) => {
     localStorage.setItem('userId', JSON.stringify(userData));
-    setLoggedIn(true);
     setUser({ username: userData.username });
   }, []);
 

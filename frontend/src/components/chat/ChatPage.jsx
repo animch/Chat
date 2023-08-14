@@ -17,8 +17,16 @@ const ChatPage = () => {
   const channelsInfo = useSelector((s) => s.channelsInfo);
 
   useEffect(() => {
+    const getAuthHeader = () => {
+      const userId = JSON.parse(localStorage.getItem('userId'));
+      if (userId && userId.token) {
+        return { Authorization: `Bearer ${userId.token}` };
+      }
+      auth.logOut();
+      return {};
+    };
     const fetchUserData = async () => {
-      dispatch(fetchData(auth.getAuthHeader()))
+      dispatch(fetchData(getAuthHeader()))
         .unwrap()
         .catch((e) => {
           toast.error(t('toast.аuthorisationError'));

@@ -8,7 +8,7 @@ const AuthButton = () => {
   const auth = useAuth();
   const { t } = useTranslation();
   return (
-    auth.loggedIn
+    auth.user
       ? <Button onClick={auth.logOut}>{t('exitButton')}</Button>
       : null
   );

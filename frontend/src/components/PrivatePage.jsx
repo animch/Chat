@@ -9,7 +9,7 @@ const PrivateRoute = () => {
   const location = useLocation();
 
   return (
-    auth.loggedIn ? (<ChatPage />) : (
+    auth.user ? (<ChatPage />) : (
       <Navigate
         to={getRoutes.loginPagePath()}
         state={{ from: location }}

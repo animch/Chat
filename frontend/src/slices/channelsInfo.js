@@ -9,7 +9,7 @@ const slice = createSlice({
   initialState: { loading: false, channels: [], currentChannelId: defaultCurrentChannelId },
   reducers: {
     setActualChannel(state, { payload }) {
-      state.currentChannelId = payload;
+      state.currentChannelId = payload.id;
     },
     addChannel(state, { payload }) {
       state.newChannelId = payload.id;

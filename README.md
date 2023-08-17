@@ -14,7 +14,7 @@
 
 <h3>Установка</h3>
 <ol>
-  <li>Склонируйте репозиторий: git@github.com:animch/frontend-project-12.git</li>
+  <li>Склонируйте репозиторий: git@github.com:animch/Chat.git</li>
   <li>Установите зависимости: make install</li>
   <li>Запустите локальный сервер: make start</li>
 </ol>

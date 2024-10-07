@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/animch/frontend-project-12/workflows/hexlet-check/badge.svg)](https://github.com/animch/frontend-project-12/actions)
 [![eslint](https://github.com/animch/frontend-project-12/actions/workflows/eslint.yml/badge.svg)](https://github.com/animch/frontend-project-12/actions/workflows/eslint.yml)
 
-<h1>Heclet Chat</h1>
+<h1>Chat</h1>
 
 <h2>Описание</h2>
 <p>Аналог Slack-чата (упрощенная версия). Приложение включает в себя регистрацию, авторизацию, страницу с ошибкой и саму страницу чата. По умолчанию каждый пользователь имеет два основных канала, но также может создавать, переименовывать и удалять свои собственные каналы. Все зарегистрированные пользователи могут обмениваться сообщениями.</p>
